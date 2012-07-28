@@ -62,6 +62,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_ELECTRON_BEAM_CATEGORY_ANIMATION = "category_animation_options";
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
+    private static final String ON_SCREEN_BUTTONS = "on_screen_buttons";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -73,6 +74,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mElectronBeamAnimationOn;
     private CheckBoxPreference mElectronBeamAnimationOff;
+    private CheckBoxPreference mOnScreenButtons;
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
 
@@ -197,6 +199,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
             }
         }
+
+        mOnScreenButtons = (CheckBoxPreference) findPreference(ON_SCREEN_BUTTONS);
+        mOnScreenButtons.setChecked(Settings.System.getInt(resolver,
+                Settings.System.ON_SCREEN_BUTTONS, 0) == 1);
 
     }
 
@@ -386,6 +392,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference == mVolumeWake) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
                     mVolumeWake.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference ==  mOnScreenButtons) {
+            Settings.System.putInt(getContentResolver(), Settings.System.ON_SCREEN_BUTTONS,
+                    mOnScreenButtons.isChecked() ? 1 : 0);
             return true;
         }
 
