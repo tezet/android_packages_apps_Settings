@@ -356,6 +356,10 @@
     <!-- Do not translate. Used as the value for a setting. -->
     <string name="default_date_format"><xliff:g id="default_date_format">MM/dd/yyyy</xliff:g></string>
 
+    <!-- Proximity work-around -->
+    <string name="is_inaccurate_proximity_title">In-accurate proximity</string>
+    <string name="is_inaccurate_proximity_summary">Work-around for inaccurate proximity sensors, this will force phone to turn on the screen after the call is ended.</string>
+
     <!-- The option in the date-format picker for using the normal format
          called for by the user's locale. -->
     <string name="normal_date_format">Regional (<xliff:g id="date" example="12-31-2009">%s</xliff:g>)</string>

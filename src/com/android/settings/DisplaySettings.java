@@ -63,6 +63,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String ON_SCREEN_BUTTONS = "on_screen_buttons";
+    private static final String IS_INACCURATE_PROXIMITY = "is_inaccurate_proximity";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -75,6 +76,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mElectronBeamAnimationOn;
     private CheckBoxPreference mElectronBeamAnimationOff;
     private CheckBoxPreference mOnScreenButtons;
+    private CheckBoxPreference mInaccurateProximityPref;
+
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
 
@@ -189,6 +192,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference((PreferenceCategory) findPreference(KEY_ELECTRON_BEAM_CATEGORY_ANIMATION));
         }
 */
+
         mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
         if (mVolumeWake != null) {
             if (!getResources().getBoolean(R.bool.config_show_volumeRockerWake)) {
@@ -203,6 +207,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mOnScreenButtons = (CheckBoxPreference) findPreference(ON_SCREEN_BUTTONS);
         mOnScreenButtons.setChecked(Settings.System.getInt(resolver,
                 Settings.System.ON_SCREEN_BUTTONS, 0) == 1);
+
+        mInaccurateProximityPref = (CheckBoxPreference) findPreference(IS_INACCURATE_PROXIMITY);
+        if (mInaccurateProximityPref != null) {
+            mInaccurateProximityPref.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.INACCURATE_PROXIMITY_WORKAROUND, 0) == 1);
+        }
 
     }
 
@@ -396,6 +406,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference ==  mOnScreenButtons) {
             Settings.System.putInt(getContentResolver(), Settings.System.ON_SCREEN_BUTTONS,
                     mOnScreenButtons.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mInaccurateProximityPref) {
+            Settings.System.putInt(getContentResolver(), Settings.System.INACCURATE_PROXIMITY_WORKAROUND,
+                    mInaccurateProximityPref.isChecked() ? 1 : 0);
             return true;
         }
 
