@@ -84,12 +84,6 @@
             android:defaultValue="true" />
 -->
 
-        <CheckBoxPreference
-            android:key="on_screen_buttons"
-            android:title="@string/on_screen_buttons_title"
-            android:summary="@string/on_screen_buttons_summary"
-            android:defaultValue="false" />
-
         <PreferenceCategory
             android:key="category_wakeup_options"
             android:title="@string/display_category_wakeup_options_title"/>
@@ -99,5 +93,23 @@
             android:title="@string/pref_volume_wake_title"
             android:summary="@string/pref_volume_wake_summary"
             android:defaultValue="false" />
+
+        <PreferenceCategory
+            android:key="category_on_screen_buttons_options"
+            android:title="@string/display_category_on_screen_buttons_height_title"/>
+
+        <CheckBoxPreference
+            android:key="on_screen_buttons"
+            android:title="@string/on_screen_buttons_title"
+            android:summary="@string/on_screen_buttons_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="on_screen_buttons_height"
+            android:title="@string/on_screen_buttons_height_title"
+            android:summary="@string/on_screen_buttons_height_summary"
+            android:persistent="false"
+            android:entries="@array/on_screen_buttons_height_entries"
+            android:entryValues="@array/on_screen_buttons_height_values" />
 
 </PreferenceScreen>

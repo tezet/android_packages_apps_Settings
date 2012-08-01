@@ -1360,5 +1360,23 @@
         <item>2</item>
     </string-array>
 
+    <string-array name="on_screen_buttons_height_entries" translatable="false">
+        <item>24dp</item>
+        <item>36dp</item>
+        <item>48dp</item>
+        <item>60dp</item>
+        <item>72dp</item>
+        <item>84dp</item>
+    </string-array>
+
+    <string-array name="on_screen_buttons_height_values" translatable="false">
+        <item>24</item>
+        <item>36</item>
+        <item>48</item>
+        <item>60</item>
+        <item>72</item>
+        <item>84</item>
+    </string-array>
+
     <!-- **** CYANOGENMOD EDITS END **** -->
 </resources>

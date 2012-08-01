@@ -4746,6 +4746,9 @@
     <!-- On-Screen Buttons -->
     <string name="on_screen_buttons_title">Enable On-screen buttons</string>
     <string name="on_screen_buttons_summary">Enables Virtual On-Screen Buttons</string>
+    <string name="on_screen_buttons_height_title">Change height</string>
+    <string name="on_screen_buttons_height_summary">Change  height of On-screen buttons</string>
+    <string name="display_category_on_screen_buttons_height_title">On-screen buttons</string>
 
     <!-- Electron Beam -->
     <string name="display_category_animation_options_title">Animation</string>
