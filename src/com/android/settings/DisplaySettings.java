@@ -67,6 +67,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ON_SCREEN_BUTTONS_HEIGHT = "on_screen_buttons_height";
     //private static final String ON_SCREEN_BUTTONS_WIDTH = "on_screen_buttons_width";
     private static final String IS_INACCURATE_PROXIMITY = "is_inaccurate_proximity";
+    private static final String KEY_HIGH_END_GFX = "high_end_gfx";
 
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
@@ -76,6 +77,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ROTATION_ANGLE_DELIM_FINAL = " & ";
 
     private CheckBoxPreference mVolumeWake;
+    private CheckBoxPreference mHighEndGfx;
     private CheckBoxPreference mElectronBeamAnimationOn;
     private CheckBoxPreference mElectronBeamAnimationOff;
     private CheckBoxPreference mOnScreenButtons;
@@ -96,7 +98,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mDisplayRotationPreference;
     private PreferenceScreen mAutomaticBacklightPreference;
 
-    private ContentObserver mAccelerometerRotationObserver = 
+    private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
         @Override
         public void onChange(boolean selfChange) {
@@ -133,7 +135,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         com.android.internal.R.bool.config_enableDreams) == false) {
             getPreferenceScreen().removePreference(mScreenSaverPreference);
         }
-        
+
         mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
         mScreenTimeoutPreference = (ListPreference) findPreference(KEY_SCREEN_TIMEOUT);
         final long currentTimeout = Settings.System.getLong(resolver, SCREEN_OFF_TIMEOUT,
@@ -223,6 +225,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mInaccurateProximityPref.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.INACCURATE_PROXIMITY_WORKAROUND, 0) == 1);
         }
+
+        mHighEndGfx = (CheckBoxPreference) findPreference(KEY_HIGH_END_GFX);
+        mHighEndGfx.setChecked((Settings.System.getInt(resolver,
+                Settings.System.HIGH_END_GFX_ENABLED, 0) == 1));
+
 
     }
 
@@ -420,6 +427,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference == mInaccurateProximityPref) {
             Settings.System.putInt(getContentResolver(), Settings.System.INACCURATE_PROXIMITY_WORKAROUND,
                     mInaccurateProximityPref.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mHighEndGfx) {
+            Settings.System.putInt(getContentResolver(), Settings.System.HIGH_END_GFX_ENABLED,
+                    mHighEndGfx.isChecked() ? 1 : 0);
             return true;
         }
 
