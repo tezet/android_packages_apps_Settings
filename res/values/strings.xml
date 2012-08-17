@@ -4694,6 +4694,7 @@
     <string name="display_rotation_enabled">Enabled.</string>
     <string name="display_rotation_disabled">Disabled.</string>
     <string name="display_rotation_unit">degrees</string>
+    <string name="display_lockscreen_rotation_title">Include lock screen</string>
     <string name="display_rotation_category_title">Rotation modes</string>
     <string name="display_rotation_0_title">0 degrees</string>
     <string name="display_rotation_90_title">90 degrees</string>
@@ -4860,7 +4861,10 @@
     <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
 
     <!-- Power menu screenshot -->
-    <string name="power_menu_screenshot_title">Power menu screenshot</string>
+    <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_reboot_title">Reboot menu</string>
+    <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_profiles_title">Profile switcher</string>
 
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">Launch Tools</string>
