@@ -110,14 +110,4 @@
             android:entries="@array/on_screen_buttons_height_entries"
             android:entryValues="@array/on_screen_buttons_height_values" />
 
-        <PreferenceCategory
-            android:key="category_advanced"
-            android:title="@string/display_category_advanced_title" />
-
-        <CheckBoxPreference
-            android:key="high_end_gfx"
-            android:title="@string/high_end_gfx_title"
-            android:summary="@string/high_end_gfx_summary"
-            android:defaultValue="false" />
-
 </PreferenceScreen>
