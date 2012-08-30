@@ -2227,6 +2227,17 @@
     <string name="cpu_set_on_boot">启动时设置</string>
     <string name="cpu_set_on_boot_summary">在启动时恢复当前的CPU设置</string>
 
+    <!-- Performance Settings : I/O scheduler settings title -->
+    <string name="io_scheds_title">I/O调度器</string>
+    <!-- Performance Settings : I/O scheduler settings summary. -->
+    <string name="io_scheds_summary">改变I/O调度器</string>
+
+    <!-- Performance Settings : I/O scheduler settings sub items -->
+    <string name="io_sched_title">I/O调度器</string>
+    <string name="io_sched_summary">%S</string>
+    <string name="io_sched_set_on_boot">启动时设置</string>
+    <string name="io_sched_set_on_boot_summary">在启动时恢复当前的I/O调度器</string>
+
     <!-- Memory Management -->
     <string name="memory_management_title">内存管理</string>
     <string name="memory_management_summary">自定义内存使用以改变系统性能</string>
@@ -2377,6 +2388,13 @@
     <!-- Security & location settings screen, setting check box title. This controls whether the device shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="lockpattern_settings_enable_lock_before_unlock">解锁前显示小部件</string>
 
+    <!-- On-Screen Buttons -->
+    <string name="on_screen_buttons_title">启用虚拟按键</string>
+    <string name="on_screen_buttons_summary">启用屏幕上的虚拟按键</string>
+    <string name="on_screen_buttons_height_title">改变按键高度</string>
+    <string name="on_screen_buttons_height_summary">改变屏幕上的虚拟按键高度</string>
+    <string name="display_category_on_screen_buttons_height_title">虚拟按键</string>
+
     <!-- Electron Beam -->
     <string name="display_category_animation_options_title">动画</string>
     <string name="display_electron_beam_animation_on_title">开屏动画</string>
@@ -2447,6 +2465,10 @@
 
     <!-- Launches Dev Tools -->
     <string name="development_tools_title">启动开发工具</string>
+
+    <!-- USB Mass Storage -->
+    <string name="usb_mass_storage_title">大容量存储</string>
+    <string name="usb_mass_storage_summary">启用USB大容量存储</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>
