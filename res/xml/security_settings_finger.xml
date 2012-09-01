@@ -23,16 +23,14 @@
         <PreferenceScreen
             android:key="unlock_set_or_change"
             android:title="@string/unlock_set_unlock_launch_picker_change_title"
-            android:summary="@string/unlock_set_unlock_launch_picker_change_summary"
+            android:summary="@string/lockfinger_unlock_set_unlock_launch_picker_change_summary"
             android:persistent="false"/>
 
-        <CheckBoxPreference
-            android:key="visiblepattern"
-            android:title="@string/lockpattern_settings_enable_visible_pattern_title"/>
-
-        <CheckBoxPreference
-            android:key="show_error_path"
-            android:title="@string/lockpattern_settings_enable_error_path_title"/>
+        <!-- Start Database Administration -->
+        <Preference
+            android:key="start_database_administration"
+            android:title="@string/lockfinger_dbadmin_title"
+            android:persistent="false"/>
 
         <CheckBoxPreference
             android:key="unlock_tactile_feedback"
