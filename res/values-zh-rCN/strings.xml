@@ -2482,5 +2482,9 @@
     <string name="volume_key_cursor_control_on">音量上/下将会使光标左/右移动</string>
     <string name="volume_key_cursor_control_on_reverse">音量上/下将会使光标右/左移动</string>
 
+    <!-- Proximity work-around -->
+    <string name="is_inaccurate_proximity_title">精确的近距传感器</string>
+    <string name="is_inaccurate_proximity_summary">通话结束后强制点亮屏幕.</string>
+
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>
