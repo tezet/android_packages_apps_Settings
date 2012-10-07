@@ -69,7 +69,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     //private static final String ON_SCREEN_BUTTONS_WIDTH = "on_screen_buttons_width";
     private static final String IS_INACCURATE_PROXIMITY = "is_inaccurate_proximity";
 
-    private static final String LOCKSCREEN_ROTATION_MODE = "Lock screen";
     private static final String ROTATION_ANGLE_0 = "0";
     private static final String ROTATION_ANGLE_90 = "90";
     private static final String ROTATION_ANGLE_180 = "180";
@@ -257,7 +256,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             String delim = "";
             summary.append(getString(R.string.display_rotation_enabled) + " ");
             if (lockScreenRotationEnabled) {
-                rotationList.add(LOCKSCREEN_ROTATION_MODE);
+                rotationList.add(getString(R.string.lock_screen_title));
             }
             if ((mode & DisplayRotation.ROTATION_0_MODE) != 0) {
                 rotationList.add(ROTATION_ANGLE_0);
